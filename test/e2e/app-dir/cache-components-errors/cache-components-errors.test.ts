@@ -3896,13 +3896,13 @@ describe('Cache Components Errors', () => {
                      at cache (webpack:///<next-src>)
                      at Private (webpack:///app/use-cache-private-without-suspense/page.tsx:15:1)
                      at Page (webpack:///app/use-cache-private-without-suspense/page.tsx:10:7)
-                   935 |       // "use cache: private" is dynamic in prerendering contexts.
-                   936 |       case 'prerender':
-                 > 937 |         return makeHangingPromise(
+                   936 |       // "use cache: private" is dynamic in prerendering contexts.
+                   937 |       case 'prerender':
+                 > 938 |         return makeHangingPromise(
                        |                                  ^
-                   938 |           workUnitStore.renderSignal,
-                   939 |           workStore.route,
-                   940 |           expression
+                   939 |           workUnitStore.renderSignal,
+                   940 |           workStore.route,
+                   941 |           expression
                  To debug the issue, start the app in development mode by running \`next dev\`, then open "/use-cache-private-without-suspense" in your browser to investigate the error.
                  Error occurred prerendering page "/use-cache-private-without-suspense". Read more: https://nextjs.org/docs/messages/prerender-error
 
