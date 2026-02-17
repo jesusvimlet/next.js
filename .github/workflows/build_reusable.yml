@@ -307,6 +307,12 @@ jobs:
       - run: pnpm playwright install --with-deps ${{ inputs.browser }}
         if: ${{ inputs.skipInstallBuild != 'yes' }}
 
+      - run: pnpm jest --showConfig
+        if: ${{ inputs.skipInstallBuild != 'yes' }}
+
+      - run: ls -al /root/actions-runner/_work/next.js/next.js/.jest-cache || true
+        if: ${{ inputs.skipInstallBuild != 'yes' }}
+
       - run: pnpm dlx turbo@${TURBO_VERSION} run get-test-timings -- --build ${{ github.sha }}
 
       - run: ${{ inputs.afterBuild }}
